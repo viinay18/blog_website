@@ -8,6 +8,12 @@ from flask_migrate import Migrate
 db = SQLAlchemy()
 DB_NAME = "database.db"
 
+
+def create_database(app):
+    if not path.exists("website/" + DB_NAME):
+            db.create_all()
+            print("Created Database!")
+
 def create_app():
     app = Flask(__name__)
     app.config["SECRET_KEY"] = "helloworld"
@@ -40,8 +46,3 @@ def create_app():
     return app
 
 app = create_app()
-
-def create_database(app):
-    if not path.exists("website/" + DB_NAME):
-            db.create_all()
-            print("Created Database!")

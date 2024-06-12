@@ -67,7 +67,7 @@
             </div>
             <p class="card-text">
                 {% if post.comments|length > 0 %}
-                    <a data-bs-toggle="collapse" href="#comments-{{post.id}}" role="button">
+                    <a data-bs-toggle="collapse" href="#comments-{{post.id}}" role="button" style="text-decoration: none;">
                         <small>View {{post.comments|length}} Comments</small>
                     </a>
                     {% else %}
